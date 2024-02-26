@@ -1,9 +1,16 @@
-import { Card } from "../../types/Card";
+import { MouseEventHandler } from "react";
 import css from "./CardComponents.module.css";
 
-const CardComponent = ({ letter = "9", symbol = "trefl" }: Card) => {
+interface Props {
+  symbol: string;
+  letter: string;
+  id: number;
+  handleClick: MouseEventHandler<HTMLDivElement> | undefined;
+}
+
+const CardComponent = ({ letter, symbol, handleClick }: Props) => {
   return (
-    <div className={css.cardComponent__container}>
+    <div className={css.cardComponent__container} onClick={handleClick}>
       <div className={css.cardLetterAndSymbol__box}>
         <p className={`${css.cardLetter} ${css[symbol]}`}>{letter}</p>
         <svg className={`${css.cardIcon}`}>
