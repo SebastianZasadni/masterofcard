@@ -1,7 +1,7 @@
-import CardComponent from "./components/CardComponents/CardComponent";
+import Table from "./components/Table/Table";
 
 const App = () => {
-  return <CardComponent />;
+  return <Table />;
 };
 
 export default App;
