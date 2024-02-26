@@ -1,12 +1,7 @@
+import { Card } from "../../types/Card";
 import css from "./CardComponents.module.css";
 
-const CardComponent = ({
-  letter = "9",
-  symbol = "trefl",
-}: {
-  letter: string;
-  symbol: string;
-}) => {
+const CardComponent = ({ letter = "9", symbol = "trefl" }: Card) => {
   return (
     <div className={css.cardComponent__container}>
       <div className={css.cardLetterAndSymbol__box}>
