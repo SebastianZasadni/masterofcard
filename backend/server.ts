@@ -1,12 +1,22 @@
 import { Request, Response } from "express";
+import mongoose from "mongoose";
 import app from "./app";
 
 const PORT = process.env.PORT || 5000;
+const uriDb = process.env.DATABASE_URL || "mongodb+srv://hobbies123:ymt6BmKZdKTgucU@hobbies.ocudtg9.mongodb.net/";
 
-app.get("/", (req: Request, res: Response) => {
-  res.send("Welcome to Express & TypeScript Server");
+
+const connection = mongoose.connect(uriDb, {
+  dbName: "db-masterofcards",
 });
 
-app.listen(PORT, () => {
-  console.log(`Server is Fire at http://localhost:${PORT}`);
-});
+connection
+  .then(() => {
+    app.listen(PORT, () => {
+      console.log(`Database connection successfull. PORT: ${PORT}`);
+    });
+  })
+  .catch((err) => {
+    console.log(`Server not running. Error message: ${err.message}`);
+    process.exit(1);
+  });
