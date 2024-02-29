@@ -1,6 +1,6 @@
-import { ChildrenJSX } from "../../types/ChildrenJSX";
+import { Children } from "../../types/Children";
 
-const Player = ({ children }: ChildrenJSX) => {
+const Player = ({ children }: Children) => {
   return <div>{children}</div>;
 };
 

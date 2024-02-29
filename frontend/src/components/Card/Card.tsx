@@ -1,5 +1,5 @@
 import { MouseEventHandler } from "react";
-import css from "./CardComponents.module.css";
+import css from "./Card.module.css";
 
 interface Props {
   symbol: string;
