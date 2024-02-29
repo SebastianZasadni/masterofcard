@@ -1,6 +1,5 @@
-export interface CardTypes {
+export interface Card {
   symbol: string;
   letter: string;
   id: number;
-  power: number;
 }

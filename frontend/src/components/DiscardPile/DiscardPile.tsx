@@ -1,31 +1,8 @@
-import { MouseEventHandler } from "react";
-import CardComponent from "../Card/Card";
-import { Card } from "../../types/CardTypes";
+import { ChildrenJSX } from "../../types/ChildrenJSX";
+import css from "./DiscardPile.module.css";
 
-const DiscardPile = ({
-  cards,
-  handleClick,
-}: {
-  cards: Card[];
-  handleClick: MouseEventHandler<HTMLDivElement> | undefined;
-}) => {
-  return (
-    <ul>
-      {cards.map((card) => {
-        const { id, symbol, letter } = card;
-        return (
-          <li key={id}>
-            <CardComponent
-              symbol={symbol}
-              letter={letter}
-              id={id}
-              handleClick={handleClick}
-            />
-          </li>
-        );
-      })}
-    </ul>
-  );
+const DiscardPile = ({ children }: ChildrenJSX) => {
+  return <div className={css.discardPile__container}>{children}</div>;
 };
 
 export default DiscardPile;
